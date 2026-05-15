@@ -237,7 +237,6 @@ FORM cruza_dados.
           <fs_item_final>-status_rel = gc_stts2.
           <fs_item_final>-obs = gc_obs2.
         ENDIF.
-
         CLEAR gv_dif.
       ENDLOOP.
     ENDLOOP.

@@ -186,7 +186,7 @@ FORM c100 USING is_string TYPE zst_c100str_l.
         lv_datacrt  TYPE string.
 
   lv_datamin = '19900101'.
-  lv_datamax = '20261212'.
+  lv_datamax = '20261225'.
 
   APPEND '0' TO lt_tpag.
   APPEND '1' TO lt_tpag.
@@ -475,8 +475,8 @@ FORM insert.
     ENDIF.
 
     INSERT ztb_c100_l FROM TABLE gt_insertc100.
-    IF sy-subrc <> 0.
-      MESSAGE e015(zlucas).
+    IF sy-subrc <> 0 OR gt_insertc100 IS INITIAL.
+      MESSAGE i015(zlucas).
     ELSE.
       MESSAGE s016(zlucas).
     ENDIF.
@@ -494,8 +494,8 @@ FORM insert.
 
 
     MODIFY ztb_c170_l FROM TABLE gt_insertc170.
-    IF sy-subrc <> 0.
-      MESSAGE e015(zlucas).
+    IF sy-subrc <> 0 OR gt_insertc170 IS INITIAL.
+      MESSAGE i015(zlucas).
       ROLLBACK WORK.
     ELSE.
       COMMIT WORK.
