@@ -474,7 +474,7 @@ FORM insert.
       ENDIF.
     ENDIF.
 
-    INSERT ztb_c100_l FROM TABLE gt_insertc100.
+    MODIFY ztb_c100_l FROM TABLE gt_insertc100.
     IF sy-subrc <> 0 OR gt_insertc100 IS INITIAL.
       MESSAGE i015(zlucas).
     ELSE.
