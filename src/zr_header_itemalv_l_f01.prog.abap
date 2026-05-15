@@ -230,13 +230,14 @@ FORM cruza_dados.
         ENDIF.
         <fs_item_final>-dif_calc = gv_dif.
 
-        IF <fs_item_final>-dif_calc <= p_tol.
+        IF <fs_item_final>-dif_calc <= p_tol AND <fs_item_final>-obs <> gc_obs4.
           <fs_item_final>-status_rel = gc_stts1.
           <fs_item_final>-obs = gc_obs1.
-        ELSE.
+        ELSEIF <fs_item_final>-obs <> gc_obs4.
           <fs_item_final>-status_rel = gc_stts2.
           <fs_item_final>-obs = gc_obs2.
         ENDIF.
+
         CLEAR gv_dif.
       ENDLOOP.
     ENDLOOP.
