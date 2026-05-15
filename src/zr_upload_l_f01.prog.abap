@@ -186,7 +186,7 @@ FORM c100 USING is_string TYPE zst_c100str_l.
         lv_datacrt  TYPE string.
 
   lv_datamin = '19900101'.
-  lv_datamax = sy-datum.
+  lv_datamax = '20261212'.
 
   APPEND '0' TO lt_tpag.
   APPEND '1' TO lt_tpag.
